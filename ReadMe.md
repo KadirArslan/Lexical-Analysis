@@ -55,7 +55,7 @@ Parameter:"Enter a number: "
 Name: reader.nextInt
 Return Type:        int number =
 Count of Parameter:0
-Parameter:Yok
+Parameter:None
 -------------
 Name: System.out.println
 Return Type:       
