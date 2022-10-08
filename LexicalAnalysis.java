@@ -54,7 +54,7 @@ public class LexicalAnalysis {
                         else if(className.contains("{"))
                            className = className.substring(0,className.length()-1);
                         
-                        System.out.println("Sınıf Adı:" + className);
+                        System.out.println("Class Name" + className);
                        
                     }
                     //   /* ... */   seklinde olan yorum araliklari hesaba katilmadan degisken ve fonksiyonlar
@@ -96,12 +96,12 @@ public class LexicalAnalysis {
                 System.out.println("HATA ! ");
             }
             // Bulunan alt eleman sayisi yazdiriliyor.
-            System.out.println("Alt Elemanlar:"+countOfVar);
+            System.out.println("Sub-elements:"+countOfVar);
             // Degiskenlerin icinde bulundugu ArrayList yazdiriliyor.
             for(int i = 0;i<arrayList.size();i++)
                 System.out.println(arrayList.get(i));
             //Uye fonksiyon sayisi yazdiriliyor.
-            System.out.println("Üye Fonksiyonlar :"+countOfFunction+" Adet");
+            System.out.println("Functions Count:"+countOfFunction+"");
             //Verilen klasor yolundaki dosya okunmaya baslandi.
             try{
                 BufferedReader file = new BufferedReader(new FileReader(fName));
@@ -134,7 +134,7 @@ public class LexicalAnalysis {
                              String parameterValue = str.substring(leftParenthesis+1,rightParenthesis);
                              //Parametre olmamasi durumunda "Yok" ifadesi parametre degeri olarak ataniyor.
                              if(parameterValue.isEmpty()){
-                                 parameterValue = "Yok";
+                                 parameterValue = "None";
                               } 
 
                              functionObj.parameterValue=parameterValue;
@@ -161,10 +161,10 @@ public class LexicalAnalysis {
                              if(functionObj.returnValue.isEmpty()) functionObj.returnValue = "Yok";
                              //Istenilen cikti seklinde ekrana yazdiriliyor.
                              System.out.println("-------------");
-                             System.out.println("Adı:"+functionObj.functionName);
-                             System.out.println("Donus Turu:"+functionObj.returnValue);
-                             System.out.println("Aldığı Parametre Sayisi:"+functionObj.countOfParameter);
-                             System.out.println("Aldığı Parametre:"+functionObj.parameterValue);
+                             System.out.println("Name:"+functionObj.functionName);
+                             System.out.println("Return Type:"+functionObj.returnValue);
+                             System.out.println("Count of Parameter:"+functionObj.countOfParameter);
+                             System.out.println("Parameter:"+functionObj.parameterValue);
                         }
                 }
             }
